@@ -6,30 +6,28 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Input } from "../../components";
-import { useState } from "react";
 import { assets, SIZES, FONTS, COLORS } from "../../constants";
 import { RectangleButton } from "../../components/Buttons";
 import { useNavigation } from "@react-navigation/native";
+import { useGlobalContext } from "../../context/ContextApi";
+import { useSignUp } from "../../context/AccountContext";
 
 const CreateAccount = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [number, setPhone] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordVisibile, setPasswordVisible] = useState(false);
+  const [
+    name,
+    setName,
+    email,
+    setEmail,
+    number,
+    setPhone,
+    password,
+    setPassword,
+    handleSubmit,
+  ] = useSignUp();
 
   const navigation = useNavigation();
 
-  //toogles password visibility to hidden and show
-  const handlePress = () => {
-    setPasswordVisible(!passwordVisibile);
-  };
-
-  //handles sign up form submission
-  const handleSubmit = () => {
-    // login form logic
-    navigation.navigate("Home");
-  };
+  const { passwordVisible, handlePress } = useGlobalContext();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -76,8 +74,8 @@ const CreateAccount = () => {
             value={password}
             onChange={(text) => setPassword(text)}
             icon1={assets.icon06}
-            icon2={passwordVisibile ? assets.icon06 : assets.icon07}
-            secureTextEntry={passwordVisibile ? "false" : "true"}
+            icon2={passwordVisible ? assets.icon06 : assets.icon07}
+            secureTextEntry={passwordVisible ? "false" : "true"}
             handlePress={handlePress}
           />
           {/* hardcoded value for password error - this should change soon */}

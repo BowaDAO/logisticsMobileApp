@@ -1,17 +1,12 @@
 import { View, Text, StyleSheet } from "react-native";
-import React, { useState } from "react";
 import { SIZES, FONTS, COLORS, assets } from "../../constants";
 import { Input } from "../../components";
+import { useGlobalContext } from "../../context/ContextApi";
+import { useLogin } from "../../context/AccountContext";
 
 const Login = () => {
-  const [number, setPhone] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordVisibile, setPasswordVisible] = useState(false);
-
-  //toogles password visibility to hidden and show
-  const handlePress = () => {
-    setPasswordVisible(!passwordVisibile);
-  };
+  const [number, setPhone, password, setPassword] = useLogin();
+  const { passwordVisible, handlePress } = useGlobalContext();
 
   return (
     <View style={styles.container}>
@@ -41,8 +36,8 @@ const Login = () => {
             value={password}
             onChange={(text) => setPassword(text)}
             icon1={assets.icon06}
-            icon2={passwordVisibile ? assets.icon06 : assets.icon07}
-            secureTextEntry={passwordVisibile ? "false" : "true"}
+            icon2={passwordVisible ? assets.icon06 : assets.icon07}
+            secureTextEntry={passwordVisible ? "false" : "true"}
             handlePress={handlePress}
           />
           {/* hardcoded value for password error - this should change soon */}

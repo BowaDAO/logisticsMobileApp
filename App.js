@@ -2,6 +2,7 @@ import { useFonts } from "expo-font";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { Navigator } from "./components";
 import { COLORS } from "./constants";
+import ContextProvider from "./context/ContextApi";
 
 const theme = {
   ...DefaultTheme,
@@ -23,8 +24,10 @@ export default function App() {
   if (!fontLoaded) return null;
 
   return (
-    <NavigationContainer>
-      <Navigator />
-    </NavigationContainer>
+    <ContextProvider>
+      <NavigationContainer>
+        <Navigator />
+      </NavigationContainer>
+    </ContextProvider>
   );
 }
