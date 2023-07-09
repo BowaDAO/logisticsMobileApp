@@ -2,11 +2,13 @@ import { View, Text, StyleSheet } from "react-native";
 import Banner from "../components/Banner";
 import { RectangleButton } from "../components/Buttons";
 import { Dimensions } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { COLORS, SIZES } from "../constants";
 
 export const Home = () => {
   const width = Dimensions.get("window").width;
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -20,6 +22,7 @@ export const Home = () => {
           color={COLORS.white}
           borderRadius={10}
           fontSize={SIZES.normal}
+          handlePress={() => navigation.navigate("RequestRide")}
         />
 
         <RectangleButton

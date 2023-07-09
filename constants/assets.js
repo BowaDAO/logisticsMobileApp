@@ -12,6 +12,9 @@ import icon10 from "../assets/icons/icon10.png";
 import icon11 from "../assets/icons/icon11.png";
 import icon12 from "../assets/icons/icon12.png";
 import icon13 from "../assets/icons/icon13.png";
+import icon14 from "../assets/icons/icon14.png";
+import icon15 from "../assets/icons/icon15.png";
+import icon16 from "../assets/icons/icon16.png";
 
 // importing vectors
 import vector01 from "../assets/vectors/vector01.png";
@@ -37,6 +40,9 @@ export default {
   icon11,
   icon12,
   icon13,
+  icon14,
+  icon15,
+  icon16,
 
   //vectors
   vector01,

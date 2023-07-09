@@ -4,6 +4,7 @@ export const COLORS = {
   blue: "#023E8A",
   red: "#BE0738",
   white: "#FAFAFA",
+  grey: "#E5E5E5",
 };
 export const FONTS = {
   light: "PoppinsLight",
