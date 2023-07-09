@@ -2,8 +2,16 @@ import React from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
 import { FONTS, assets, SIZES, COLORS } from "../constants";
 
-const WelcomeScreensTop = ({ imgUrl, text, heading, textWidth }) => {
-  const { container, headingContainer, headingText, vector } = styles;
+const WelcomeScreensTop = ({
+  imgUrl,
+  text,
+  heading,
+  textWidth,
+  dot1,
+  dot2,
+  dot3,
+}) => {
+  const { container, headingContainer, headingText, vector, dot } = styles;
   return (
     <View style={container}>
       <Image source={imgUrl} style={vector} />
@@ -24,6 +32,11 @@ const WelcomeScreensTop = ({ imgUrl, text, heading, textWidth }) => {
       >
         {text}
       </Text>
+      <View style={dot}>
+        <Image source={dot1} />
+        <Image source={dot2} />
+        <Image source={dot3} />
+      </View>
     </View>
   );
 };
@@ -32,7 +45,6 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     justifyContent: "center",
-    top: "17.6%",
   },
 
   vector: {
@@ -50,6 +62,13 @@ const styles = StyleSheet.create({
     letterSpacing: 0.6,
     color: COLORS.black,
     fontFamily: FONTS.medium,
+  },
+
+  dot: {
+    flexDirection: "row",
+    gap: 8,
+    alignItems: "center",
+    marginTop: 50,
   },
 });
 

@@ -1,4 +1,4 @@
-import { TouchableOpacity, Image, StyleSheet, Text, View } from "react-native";
+import { TouchableOpacity, Image, StyleSheet, Text } from "react-native";
 import { COLORS } from "../constants";
 
 //round buttons component
@@ -39,23 +39,6 @@ export const RectangleButton = ({
     >
       <Text style={{ color: color, fontSize: fontSize }}>{text}</Text>
     </TouchableOpacity>
-  );
-};
-
-//dots
-export const Dots = ({ dot1, dot2, dot3 }) => {
-  return (
-    <View
-      style={{
-        flexDirection: "row",
-        gap: 8,
-        alignItems: "center",
-      }}
-    >
-      <Image source={dot1} />
-      <Image source={dot2} />
-      <Image source={dot3} />
-    </View>
   );
 };
 

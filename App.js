@@ -1,6 +1,6 @@
 import { useFonts } from "expo-font";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
-import { Navigator } from "./components";
+import Navigator from "./components/Navigator";
 import { COLORS } from "./constants";
 import ContextProvider from "./context/ContextApi";
 

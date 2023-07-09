@@ -1,19 +1,13 @@
 import { View, StyleSheet, Text, TouchableWithoutFeedback } from "react-native";
 import { COLORS, assets, SIZES } from "../../constants";
 import WelcomeScreensTop from "../../components/welcomeScreens";
-import { RectangleButton, Dots } from "../../components/Buttons";
+import { RectangleButton } from "../../components/Buttons";
 import { useNavigation } from "@react-navigation/native";
 
 const WelcomeThree = () => {
   const navigation = useNavigation();
-  const {
-    container,
-    buttonWrapper,
-    loginWrapper,
-    vectorWrapper,
-    login,
-    dotWrapper,
-  } = styles;
+  const { container, buttonWrapper, loginWrapper, vectorWrapper, login } =
+    styles;
   return (
     <View style={container}>
       <View style={vectorWrapper}>
@@ -24,11 +18,10 @@ const WelcomeThree = () => {
         makes it the most convineint and
         comfortable platform."
           textWidth={259}
+          dot1={assets.icon11}
+          dot2={assets.icon11}
+          dot3={assets.icon13}
         />
-      </View>
-
-      <View style={dotWrapper}>
-        <Dots dot1={assets.icon11} dot2={assets.icon11} dot3={assets.icon13} />
       </View>
 
       <View style={buttonWrapper}>
@@ -62,23 +55,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   vectorWrapper: {
-    top: 56,
+    marginTop: "17.6%",
   },
   buttonWrapper: {
     position: "absolute",
-    bottom: "12.07%",
+    bottom: "16%",
   },
   loginWrapper: {
     position: "absolute",
-    bottom: "6.78%",
+    bottom: "11%",
   },
   login: {
     color: COLORS.blue,
     fontSize: SIZES.base,
-  },
-  dotWrapper: {
-    position: "absolute",
-    bottom: "31.2%",
   },
 });
 

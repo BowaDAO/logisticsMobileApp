@@ -5,7 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
-import { Input } from "../../components";
+import Input from "../../components/Input";
 import { assets, SIZES, FONTS, COLORS } from "../../constants";
 import { RectangleButton } from "../../components/Buttons";
 import { useNavigation } from "@react-navigation/native";
@@ -75,7 +75,7 @@ const CreateAccount = () => {
             onChange={(text) => setPassword(text)}
             icon1={assets.icon06}
             icon2={passwordVisible ? assets.icon06 : assets.icon07}
-            secureTextEntry={passwordVisible ? "false" : "true"}
+            secureTextEntry={passwordVisible ? false : true}
             handlePress={handlePress}
           />
           {/* hardcoded value for password error - this should change soon */}
@@ -161,8 +161,9 @@ const styles = StyleSheet.create({
   },
   CTAWrapper: {
     flexDirection: "row",
-    justifyContent: "center",
-    marginTop: 64,
+    alignSelf: "center",
+    bottom: "8.8%",
+    position: "absolute",
   },
   login: {
     color: COLORS.blue,
