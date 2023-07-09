@@ -1,4 +1,10 @@
-import { View, StyleSheet, Text, TouchableWithoutFeedback } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  SafeAreaView,
+} from "react-native";
 import { COLORS, assets, SIZES } from "../../constants";
 import WelcomeScreensTop from "../../components/welcomeScreens";
 import { RectangleButton } from "../../components/Buttons";
@@ -9,7 +15,7 @@ const WelcomeThree = () => {
   const { container, buttonWrapper, loginWrapper, vectorWrapper, login } =
     styles;
   return (
-    <View style={container}>
+    <SafeAreaView style={container}>
       <View style={vectorWrapper}>
         <WelcomeScreensTop
           imgUrl={assets.vector03}
@@ -44,7 +50,7 @@ const WelcomeThree = () => {
           <Text style={login}>Login</Text>
         </TouchableWithoutFeedback>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -1,4 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
+import { Image } from "react-native";
 import {
   WelcomeOne,
   WelcomeTwo,
@@ -8,6 +9,7 @@ import {
   Home,
 } from "../screens";
 import { COLORS, assets } from "../constants";
+import HomeHeading from "./HomeHeading";
 
 const Stack = createStackNavigator();
 
@@ -33,7 +35,22 @@ const Navigator = () => {
         component={CreateAccount}
       ></Stack.Screen>
       <Stack.Screen name="Login" component={Login}></Stack.Screen>
-      <Stack.Screen name="Home" component={Home}></Stack.Screen>
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{
+          headerStyle: { height: 124, borderBottomWidth: 1 },
+          headerLeft: () => <HomeHeading />,
+          headerRight: () => <Image source={assets.icon09} />,
+          headerLeftContainerStyle: {
+            paddingLeft: 15,
+          },
+          headerRightContainerStyle: {
+            paddingRight: 15,
+          },
+          headerShadowVisible: true,
+        }}
+      ></Stack.Screen>
     </Stack.Navigator>
   );
 };

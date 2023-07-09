@@ -1,4 +1,4 @@
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, SafeAreaView } from "react-native";
 import { COLORS, assets } from "../../constants";
 import WelcomeScreensTop from "../../components/welcomeScreens";
 import { RoundButton } from "../../components/Buttons";
@@ -9,7 +9,7 @@ const WelcomeOne = () => {
 
   const { container, buttonWrapper, vectorWrapper } = styles;
   return (
-    <View style={container}>
+    <SafeAreaView style={container}>
       <View style={vectorWrapper}>
         <WelcomeScreensTop
           imgUrl={assets.vector01}
@@ -28,7 +28,7 @@ const WelcomeOne = () => {
           handleNavigate={() => navigation.navigate("Welcome-two")}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

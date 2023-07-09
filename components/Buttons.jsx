@@ -1,5 +1,5 @@
 import { TouchableOpacity, Image, StyleSheet, Text } from "react-native";
-import { COLORS } from "../constants";
+import { COLORS, FONTS } from "../constants";
 
 //round buttons component
 export const RoundButton = ({ imgUrl, handleNavigate }) => {
@@ -37,7 +37,15 @@ export const RectangleButton = ({
       }}
       onPress={handlePress}
     >
-      <Text style={{ color: color, fontSize: fontSize }}>{text}</Text>
+      <Text
+        style={{
+          color: color,
+          fontSize: fontSize,
+          fontFamily: FONTS.medium,
+        }}
+      >
+        {text}
+      </Text>
     </TouchableOpacity>
   );
 };
